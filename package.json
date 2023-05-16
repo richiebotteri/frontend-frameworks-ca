@@ -11,6 +11,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.8",
+    "@fontsource/ubuntu": "^4.5.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
