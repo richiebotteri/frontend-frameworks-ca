@@ -4,7 +4,7 @@ import mediaQuery from "../../styles/breakpoint";
 
 // Outer Container
 
-export const Header = styled.div`
+export const Header = styled.header`
   ${flex.column};
   ${flex.justifyCenter};
   gap: ${({ theme: { spacing } }) => spacing.gap1};
