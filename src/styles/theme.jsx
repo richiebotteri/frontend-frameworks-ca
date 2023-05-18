@@ -15,12 +15,10 @@ const theme = {
     gap2: "var(--flex-gap-2)",
     gap3: "var(--flex-gap-3)",
   },
-  shape: {
-    radius: "var(--radius-searchbar)",
-    containerWidth: "var(--container)",
-    searchWidth: "var(--search)",
+  width: {
+    sectionContainer: "var(--container)",
+    searchInput: "var(--container)",
   },
-  background: {},
   color: {
     icon: "var(--color-dark)",
   },
