@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     --fs-p2: 12px; 
   }
 
-  *{
+  * {
     box-sizing: border-box;
   }
 
@@ -51,6 +51,9 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: #000;
+  }
+  p {
+    font-family: "Roboto", sans-serif;
   }
 
 
