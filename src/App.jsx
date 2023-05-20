@@ -1,12 +1,10 @@
-import Header from "./components/Header";
-import ProductCard from "./components/ProductCard";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
-      <Header />
-      <ProductCard />
-    </>
+    <Layout>
+      <h1>Main</h1>
+    </Layout>
   );
 }
 
