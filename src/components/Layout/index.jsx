@@ -1,16 +1,13 @@
-import { PropTypes } from "prop-types";
 import Header from "../Header";
+import Footer from "../Footer";
+import Main from "../Main";
 
 export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
-      <footer>Footer</footer>
+      <Main>{children}</Main>
+      <Footer />
     </>
   );
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
