@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import * as flex from "./Flex.styles";
+import * as flex from "../../styles/flex.styles";
 
-export const IconButton = styled.button`
+const style = `
   width: 45px;
   height: 45px;
   border-radius: 100%;
@@ -17,7 +17,12 @@ export const IconButton = styled.button`
   }
 
   font-size: 18px;
-  &svg {
-    color: ${({ theme: { color } }) => color.icon};
-  }
+`;
+
+export const IconButton = styled.button`
+  ${style}
+`;
+
+export const IconLink = styled.a`
+  ${style}
 `;

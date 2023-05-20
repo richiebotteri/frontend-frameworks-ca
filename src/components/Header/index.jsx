@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Container from "./Container.styled";
 import { LogoLink } from "./Logo.styled";
-import * as Navbar from "./Navbar.styled";
+import * as Nav from "./Navbar.styled";
 import * as Search from "./SearchBar.styled";
 import * as Icon from "@fortawesome/free-solid-svg-icons";
-import * as IconButton from "./Button.styled";
 import { useState } from "react";
+import * as IconLink from "./IconLink.styled";
+import { MenuToggleButton } from "./MenuToggleButton.styled";
 
 export default function Header() {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -17,37 +18,34 @@ export default function Header() {
   return (
     <Container.Header>
       <Container.MobileHeader>
-        <LogoLink href="#">Hello</LogoLink>
-        <IconButton.NavButton onClick={toggleMenuOnClick}>
+        <LogoLink href="/">Hello</LogoLink>
+        <MenuToggleButton onClick={toggleMenuOnClick}>
           <FontAwesomeIcon icon={Icon.faBars} />
-        </IconButton.NavButton>
+        </MenuToggleButton>
       </Container.MobileHeader>
       <Container.Menu $isActive={menuToggle}>
-        <Navbar.Nav>
-          <Navbar.Ul>
-            <Navbar.Li>
-              <Navbar.A>Home</Navbar.A>
-            </Navbar.Li>
-            <Navbar.Li>
-              <Navbar.A>Contact</Navbar.A>
-            </Navbar.Li>
-          </Navbar.Ul>
-        </Navbar.Nav>
+        <Nav.Nav>
+          <Nav.Ul>
+            <Nav.Li>
+              <Nav.A href="/">Home</Nav.A>
+            </Nav.Li>
+          </Nav.Ul>
+        </Nav.Nav>
         <Container.Search>
           <Search.InputEl />
           <Search.IconEl>
             <FontAwesomeIcon icon={Icon.faMagnifyingGlass} />
           </Search.IconEl>
         </Container.Search>
-        <Container.IconButtons>
-          <IconButton.Cart>
+        <Container.IconLinks>
+          <IconLink.Cart href="/CartPage">
             <FontAwesomeIcon icon={Icon.faCartShopping} />
-            <IconButton.CartCount />
-          </IconButton.Cart>
-          <IconButton.Contact>
+            <IconLink.CartCount />
+          </IconLink.Cart>
+          <IconLink.Contact href="/ContactPage">
             <FontAwesomeIcon icon={Icon.faHeadphones} />
-          </IconButton.Contact>
-        </Container.IconButtons>
+          </IconLink.Contact>
+        </Container.IconLinks>
       </Container.Menu>
     </Container.Header>
   );

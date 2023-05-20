@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import * as flex from "../../shared/Flex.styles";
 import mediaQuery from "../../styles/breakpoint";
+import * as flex from "../../styles/flex.styles";
 
 // Outer Container
 
@@ -26,20 +26,19 @@ export const MobileHeader = styled.div`
 
 export const Menu = styled.div`
   display: ${(props) => (props.$isActive === true ? "flex" : "none")};
-  flex-direction: column;
+  ${flex.column}
   gap: 20px;
   width: 100%;
 
   @media ${mediaQuery.tabletSm} {
-    display: flex;
-    flex-direction: row;
+    ${flex.row}
     ${flex.justifyBetween}
   }
 `;
 
 // Inner Containers
 
-export const IconButtons = styled.div`
+export const IconLinks = styled.div`
   ${flex.row};
   gap: 10px;
 `;

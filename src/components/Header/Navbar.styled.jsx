@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import * as flex from "../../shared/Flex.styles";
+import * as flex from "../../styles/flex.styles";
 import mediaQuery from "../../styles/breakpoint";
 
 export const Nav = styled.nav`
   font-family: ${({ theme: { font } }) => font.secondary};
+  ${flex.row}
+  ${flex.alignItemsCenter}
 `;
 
 export const Ul = styled.ul`

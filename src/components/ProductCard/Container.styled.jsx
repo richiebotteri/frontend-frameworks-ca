@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import * as flex from "../../shared/Flex.styles";
+import * as flex from "../../styles/flex.styles";
 
 export const CardLink = styled.a`
   display: inline-block;
