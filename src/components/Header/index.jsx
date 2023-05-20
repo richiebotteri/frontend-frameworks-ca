@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <Container.Header>
       <Container.MobileHeader>
-        <LogoLink href="/">Hello</LogoLink>
+        <LogoLink href="/">SwiftShop</LogoLink>
         <MenuToggleButton onClick={toggleMenuOnClick}>
           <FontAwesomeIcon icon={Icon.faBars} />
         </MenuToggleButton>

@@ -10,7 +10,7 @@ export const Header = styled.header`
   gap: ${({ theme: { spacing } }) => spacing.gap1};
   padding: ${({ theme: { spacing } }) => spacing.p3};
   width: ${({ theme: { width } }) => width.sectionContainer};
-  margin: auto;
+  margin: 0 auto;
   @media ${mediaQuery.tabletSm} {
     ${flex.row};
     ${flex.justifyBetween};
