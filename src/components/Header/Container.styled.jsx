@@ -26,7 +26,7 @@ export const MobileHeader = styled.div`
 
 export const Menu = styled.div`
   display: ${(props) => (props.$isActive === true ? "flex" : "none")};
-  ${flex.column}
+  flex-direction: column;
   gap: 20px;
   width: 100%;
 
