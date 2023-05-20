@@ -40,11 +40,20 @@ const GlobalStyle = createGlobalStyle`
   html {
     height: 100%;
   }
-  body {
+  
+  #root{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
     list-style: none;
     margin: 0;
   }
+
+  body {
+    height: 100%;
+  }
+
   ul {
     list-style: none;
   }
