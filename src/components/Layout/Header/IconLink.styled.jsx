@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import { alignItemsCenter, justifyCenter } from "../../styles/flex.styles";
-import { IconLink } from "../common/IconLink.styled";
+import { alignItemsCenter, justifyCenter } from "../../../styles/flex.styles";
+import { IconLink } from "../../common/IconLink.styled";
 
 export const Cart = styled(IconLink)`
   position: relative;

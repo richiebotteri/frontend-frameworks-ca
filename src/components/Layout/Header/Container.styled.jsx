@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
-import mediaQuery from "../../styles/breakpoint";
-import * as flex from "../../styles/flex.styles";
+import mediaQuery from "../../../styles/breakpoint";
+import * as flex from "../../../styles/flex.styles";
 
 // Outer Container
 

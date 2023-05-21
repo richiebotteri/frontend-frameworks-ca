@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as flex from "../../styles/flex.styles";
+import * as flex from "../../../styles/flex.styles";
 
 export const LogoLink = styled.a`
   padding: 0 20px;

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconLink } from "../common/IconLink.styled";
-
+import { IconLink } from "../../common/IconLink.styled";
 import { faHeadphones } from "@fortawesome/free-solid-svg-icons";
 import { FooterContainer } from "./FooterContainer.styled";
 import { CopyRightContainer } from "./CopyRightContainer";
@@ -17,7 +16,6 @@ export default function Footer() {
           experience, offering a wide range of products from top brands at
           competitive prices.
         </p>
-
         <h2>Support</h2>
         <IconLink href="/ContactPage">
           <FontAwesomeIcon icon={faHeadphones} />
@@ -25,7 +23,7 @@ export default function Footer() {
       </FooterContainer>
       <CopyRightContainer>
         <CopyParagraph>
-          © 2023 Richie Botteri. All rights reserved.{" "}
+          © 2023 Richie Botteri. All rights reserved.
         </CopyParagraph>
       </CopyRightContainer>
     </footer>
