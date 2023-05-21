@@ -130,7 +130,7 @@ export default function ContactForm() {
           required
         ></TextArea>
       </FormGroup>
-      <input type="submit" value="submit" />
+      <Input type="submit" value="submit" />
     </Form>
   );
 }

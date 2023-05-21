@@ -6,8 +6,8 @@ export default function ContactPage() {
       <h1>Contact Page</h1>
       <p>Do you have any issues?</p>
       <p>
-        Please contact us through the form below and we replay within 1-2
-        business days!
+        Please contact us through the form below and we will contact you within
+        1-2 business days!
       </p>
       <ContactForm />
     </>
