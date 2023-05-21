@@ -104,20 +104,6 @@ const GlobalStyle = createGlobalStyle`
       --search: 450px;
     }
   }
-
-  @media ${breakpoint.laptopXlg}{
-    :root{
-      --container: 1140px;
-      --search: 550px;
-    }
-  }
-
-  @media ${breakpoint.desktopXxlg}{
-    :root{
-      --container: 1320px;
-      --search: 600px;
-    }
-  }
 `;
 
 export default GlobalStyle;
