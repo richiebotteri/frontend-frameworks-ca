@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     height: 100%;
+    margin: 0;
   }
 
   ul {
@@ -61,7 +62,12 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: #000;
   }
-  p {
+
+  h1, h2, h3, h4{
+    font-family: "ubuntu", sans-serif;
+  }
+
+  p, label, a {
     font-family: "Roboto", sans-serif;
   }
 
