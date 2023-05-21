@@ -1,12 +1,18 @@
 import { styled } from "styled-components";
 import * as flex from "../../styles/flex.styles";
+import mediaQuery from "../../styles/breakpoint";
 
 export const CardLink = styled.a`
-  display: inline-block;
-  width: 230px;
+  ${flex.column}
+  width: 100%;
+  height: 400px;
   transition: 0.2s ease-in-out;
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @media ${mediaQuery.mobilXs} {
+    width: 230px;
   }
 `;
 
@@ -15,28 +21,28 @@ export const Image = styled.div`
   position: relative;
   ${flex.row}
   ${flex.justifyEnd}
+  height: 50%;
 `;
 
 export const Content = styled.div`
   width: inherit;
   padding: 20px;
   ${flex.column}
+  ${flex.justifyBetween};
   background-color: #f3f3f3;
-`;
-
-export const Discount = styled.div`
-  width: 60px;
-  height: 40px;
-  background-color: lightgreen;
-  ${flex.row}
-  ${flex.justifyCenter}
-${flex.alignItemsCenter}
-position: absolute;
-  top: 0;
+  height: 50%;
 `;
 
 export const Rating = styled.div`
-  padding-top: 10px;
+  position: absolute;
+  width: 60px;
+  color: white;
+  ${flex.row};
+  ${flex.justifyCenter};
+  ${flex.alignItemsCenter};
+  gap: 5px;
+  padding: 5px;
+  background-color: #3f3f3f;
 `;
 
 export const Row = styled.div`
@@ -48,5 +54,6 @@ export const Row = styled.div`
 
 export const Price = styled.div`
   ${flex.row}
+  flex-wrap: wrap;
   gap: 10px;
 `;

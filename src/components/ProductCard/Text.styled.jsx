@@ -19,3 +19,11 @@ export const Price = styled.p`
   font-family: ${({ theme: { font } }) => font.primary};
   font-size: 24px;
 `;
+
+export const DiscountPrice = styled(Price)`
+  color: #df0707;
+`;
+
+export const Del = styled.del`
+  color: #666666;
+`;

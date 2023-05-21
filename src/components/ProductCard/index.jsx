@@ -2,38 +2,54 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Container from "./container.styled";
 import { Img } from "./image.styled";
 import * as Icon from "@fortawesome/free-solid-svg-icons";
-import { AddToCart } from "./AddToCart.styled";
 import * as Text from "./Text.styled";
+import { useEffect, useState } from "react";
 
 export default function ProductCard() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function getProducts() {
+      const response = await fetch(API_URL);
+      const result = await response.json();
+      setProducts(result);
+    }
+
+    getProducts();
+  }, []);
+
+  const API_URL = "https://api.noroff.dev/api/v1/online-shop/";
+
   return (
-    <Container.CardLink href="#">
-      <Container.Image>
-        <Img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
-        <Container.Discount>
-          <p>50%</p>
-        </Container.Discount>
-      </Container.Image>
-      <Container.Content>
-        <Text.Title>Nike Air</Text.Title>
-        <Container.Rating>
-          <FontAwesomeIcon icon={Icon.faStar} />
-          <FontAwesomeIcon icon={Icon.faStar} />
-          <FontAwesomeIcon icon={Icon.faStar} />
-          <FontAwesomeIcon icon={Icon.faStar} />
-        </Container.Rating>
-        <Text.Description>
-          Nike Air is the lighest shoe in the world!
-        </Text.Description>
-        <Container.Row>
-          <Container.Price>
-            <Text.Price>250,-</Text.Price>
-          </Container.Price>
-          <AddToCart>
-            <FontAwesomeIcon icon={Icon.faCartPlus} />
-          </AddToCart>
-        </Container.Row>
-      </Container.Content>
-    </Container.CardLink>
+    <>
+      {products.map((product, index) => (
+        <Container.CardLink
+          key={index}
+          href={`/ProductPage?title=${product.title}`}
+        >
+          <Container.Image>
+            <Img src={product.imageUrl} />
+            <Container.Rating>
+              <p>{product.rating}</p>
+              <FontAwesomeIcon icon={Icon.faStar} />
+            </Container.Rating>
+          </Container.Image>
+          <Container.Content>
+            <Text.Title>{product.title}</Text.Title>
+            <Text.Description>{product.description}</Text.Description>
+            <Container.Row>
+              <Container.Price>
+                <Text.Price>
+                  <Text.Del>{product.price}</Text.Del>
+                </Text.Price>
+                <Text.DiscountPrice>
+                  {product.discountedPrice}
+                </Text.DiscountPrice>
+              </Container.Price>
+            </Container.Row>
+          </Container.Content>
+        </Container.CardLink>
+      ))}
+    </>
   );
 }
