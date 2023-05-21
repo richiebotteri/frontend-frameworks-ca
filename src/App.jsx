@@ -1,9 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <Layout>
-      <h1>Main</h1>
+      <Routes>
+        <Route path="/ContactPage" element={<ContactPage />} />
+      </Routes>
     </Layout>
   );
 }
