@@ -47,14 +47,3 @@ export const LogoSearch = styled.div`
   ${flex.row};
   ${flex.justifyBetween};
 `;
-
-export const Search = styled.div`
-  ${flex.row};
-  ${flex.alignItemsCenter};
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  @media ${mediaQuery.tabletMd} {
-    ${flex.justifyBetween};
-  }
-`;

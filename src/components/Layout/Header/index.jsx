@@ -10,10 +10,19 @@ import { MenuToggleButton } from "./MenuToggleButton.styled";
 
 export default function Header() {
   const [menuToggle, setMenuToggle] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   function toggleMenuOnClick() {
     menuToggle === false ? setMenuToggle(true) : setMenuToggle(false);
   }
+
+  function onSearchFormChange(event) {
+    const searchInput = event.target;
+    const inputSearchQuery = searchInput.value;
+    setSearchQuery(inputSearchQuery);
+  }
+
+  console.log(searchQuery);
 
   return (
     <Container.Header>
@@ -31,12 +40,16 @@ export default function Header() {
             </Nav.Li>
           </Nav.Ul>
         </Nav.Nav>
-        <Container.Search>
-          <Search.InputEl />
+        <Search.Form onChange={onSearchFormChange} query={searchQuery}>
+          <Search.InputEl
+            type="text"
+            name="search"
+            placeholder="ex: Samsung Galaxy A4"
+          />
           <Search.IconEl>
             <FontAwesomeIcon icon={Icon.faMagnifyingGlass} />
           </Search.IconEl>
-        </Container.Search>
+        </Search.Form>
         <Container.IconLinks>
           <IconLink.Cart href="/CartPage">
             <FontAwesomeIcon icon={Icon.faCartShopping} />
