@@ -35,14 +35,14 @@ export const Content = styled.div`
 
 export const Rating = styled.div`
   position: absolute;
-  width: 60px;
+  width: 70px;
   color: white;
   ${flex.row};
   ${flex.justifyCenter};
   ${flex.alignItemsCenter};
   gap: 5px;
-  padding: 5px;
-  background-color: #3f3f3f;
+  background-color: #646464;
+  font-size: 14px;
 `;
 
 export const Row = styled.div`

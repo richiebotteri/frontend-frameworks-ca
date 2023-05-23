@@ -1,27 +1,21 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import useApi from "../../hooks/useApi";
+import Spinner from "../Spinner";
 import * as Container from "./container.styled";
 import { Img } from "./image.styled";
-import * as Icon from "@fortawesome/free-solid-svg-icons";
 import * as Text from "./Text.styled";
-import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ProductCard() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function getProducts() {
-      const response = await fetch(API_URL);
-      const result = await response.json();
-      setProducts(result);
-    }
-
-    getProducts();
-  }, []);
-
   const API_URL = "https://api.noroff.dev/api/v1/online-shop/";
+
+  const { data, isLoading } = useApi(API_URL);
+
+  const products = data;
 
   return (
     <>
+      <Spinner loadingState={isLoading} />
       {products.map((product, index) => (
         <Container.CardLink
           key={index}
@@ -30,8 +24,8 @@ export default function ProductCard() {
           <Container.Image>
             <Img src={product.imageUrl} />
             <Container.Rating>
-              <p>{product.rating}</p>
-              <FontAwesomeIcon icon={Icon.faStar} />
+              <p>{product.rating}/5</p>
+              <FontAwesomeIcon icon={faStar} />
             </Container.Rating>
           </Container.Image>
           <Container.Content>
