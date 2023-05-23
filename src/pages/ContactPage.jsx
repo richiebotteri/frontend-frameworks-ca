@@ -1,4 +1,4 @@
-import ContactForm from "../components/ContactForm";
+import Form from "../components/Form";
 
 export default function ContactPage() {
   return (
@@ -9,7 +9,7 @@ export default function ContactPage() {
         Please contact us through the form below and we will contact you within
         1-2 business days!
       </p>
-      <ContactForm />
+      <Form />
     </>
   );
 }
