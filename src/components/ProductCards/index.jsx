@@ -3,7 +3,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as s from "./styled";
 import Spinner from "../../shared/Spinner";
-import useQuery from "../../hooks/useQuery";
+import { useContext } from "react";
+import { SearchQueryContext } from "../../App";
 
 // s = styled
 
@@ -14,14 +15,19 @@ export default function ProductCards() {
 
   const products = data;
 
-  const { searchQuery } = useQuery("");
+  const { queryContext } = useContext(SearchQueryContext);
 
-  console.log(searchQuery);
+  const filteredProducts = products.filter((product) => {
+    const title = product.title.toLowerCase();
+    const lowerCaseSearchTerm = queryContext.toLowerCase();
+
+    return title.includes(lowerCaseSearchTerm);
+  });
 
   return (
     <s.CardGrid>
       <Spinner loadingState={isLoading} />
-      {products.map((product, index) => (
+      {filteredProducts.map((product, index) => (
         <s.LinkContainer
           key={index}
           href={`/ProductPage?title=${product.title}`}

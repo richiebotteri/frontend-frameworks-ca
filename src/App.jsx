@@ -4,12 +4,13 @@ import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import { createContext, useState } from "react";
 
-const testContext = createContext();
+export const SearchQueryContext = createContext();
 
 function App() {
-  const { state, setState } = useState("test");
+  const [queryContext, setQueryContext] = useState("test");
+
   return (
-    <testContext.Provider value={{ state, setState }}>
+    <SearchQueryContext.Provider value={{ queryContext, setQueryContext }}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="*" element={<h1>Route not found</h1>} />
@@ -17,7 +18,7 @@ function App() {
           <Route path="/ContactPage" element={<ContactPage />} />
         </Route>
       </Routes>
-    </testContext.Provider>
+    </SearchQueryContext.Provider>
   );
 }
 

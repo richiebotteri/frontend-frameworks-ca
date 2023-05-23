@@ -28,6 +28,7 @@ export const CardGrid = styled.div`
 export const LinkContainer = styled.a`
   ${flex.column}
   width: 100%;
+  max-width: 400px;
   height: 400px;
   transition: 0.2s ease-in-out;
   &:hover {
