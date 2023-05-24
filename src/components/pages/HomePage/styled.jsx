@@ -1,29 +1,8 @@
 import { styled } from "styled-components";
-import * as flex from "../../styles/flex.styles";
-import mediaQuery from "../../styles/breakpoint";
+import * as flex from "../../../styles/flex.styles";
+import mediaQuery from "../../../styles/breakpoint";
 
 // Containers
-
-export const CardGrid = styled.div`
-  margin-top: 40px;
-  display: grid;
-  ${flex.justifyCenter}
-  grid-template-columns: auto;
-  gap: 30px;
-
-  @media ${mediaQuery.tabletSm} {
-    grid-template-columns: repeat(2, auto);
-    justify-content: none;
-  }
-
-  @media ${mediaQuery.tabletMd} {
-    grid-template-columns: repeat(2, auto);
-  }
-
-  @media ${mediaQuery.laptopLg} {
-    grid-template-columns: repeat(3, auto);
-  }
-`;
 
 export const LinkContainer = styled.a`
   ${flex.column}
