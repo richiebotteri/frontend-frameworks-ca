@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { Container } from "../../shared/Container";
+import mediaQuery from "../../styles/breakpoint";
 
 export const Footer = styled.footer`
   background-color: #eee;
@@ -19,7 +20,11 @@ export const CopyParagraph = styled.p`
 `;
 
 export const footerContainer = styled(Container)`
-  padding: ${({ theme: { spacing } }) => spacing.p4} 0;
+  padding: ${({ theme: { spacing } }) => spacing.p4};
+
+  @media ${mediaQuery.tabletSm} {
+    padding: ${({ theme: { spacing } }) => spacing.p4} 0;
+  }
 `;
 
 /* { theme: { spacing } }) => spacing.p3 */
