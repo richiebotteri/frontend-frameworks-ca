@@ -33,10 +33,16 @@ export default function ProductCards() {
             <s.Description>{product.description}</s.Description>
             <s.RowContainer>
               <s.PriceContainer>
-                <s.PriceText>
-                  <s.Del>{product.price}</s.Del>
-                </s.PriceText>
-                <s.DiscountPrice>{product.discountedPrice}</s.DiscountPrice>
+                {product.price === product.discountedPrice ? (
+                  <s.PriceText>{product.price}</s.PriceText>
+                ) : (
+                  <>
+                    <s.PriceText>
+                      <s.Del>{product.price}</s.Del>
+                    </s.PriceText>
+                    <s.DiscountPrice>{product.discountedPrice}</s.DiscountPrice>
+                  </>
+                )}
               </s.PriceContainer>
             </s.RowContainer>
           </s.ContentContainer>
@@ -44,4 +50,11 @@ export default function ProductCards() {
       ))}
     </s.CardGrid>
   );
+}
+
+{
+  /* <s.PriceText>
+  <s.Del>{product.price}</s.Del>
+</s.PriceText>
+<s.DiscountPrice>{product.discountedPrice}</s.DiscountPrice> */
 }
