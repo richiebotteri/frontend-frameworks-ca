@@ -19,7 +19,7 @@ export const CopyParagraph = styled.p`
 `;
 
 export const footerContainer = styled(Container)`
-  padding: ${({ theme: { spacing } }) => spacing.p4};
+  padding: ${({ theme: { spacing } }) => spacing.p4} 0;
 `;
 
 /* { theme: { spacing } }) => spacing.p3 */
