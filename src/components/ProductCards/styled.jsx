@@ -36,7 +36,8 @@ export const LinkContainer = styled.a`
   }
 
   @media ${mediaQuery.mobilXs} {
-    width: 230px;
+    max-width: 300px;
+    min-width: 230px;
   }
 `;
 
