@@ -42,9 +42,7 @@ export default function ProductPage() {
                     <PriceText>Kr {price},-</PriceText>
                   ) : (
                     <>
-                      <PriceText>
-                        <DiscountPrice>Kr {discountedPrice},-</DiscountPrice>
-                      </PriceText>
+                      <DiscountPrice>Kr {discountedPrice},-</DiscountPrice>
                       <s.DiscountPercentage>
                         - {parseInt(((price - discountedPrice) * 100) / price)}%
                       </s.DiscountPercentage>
