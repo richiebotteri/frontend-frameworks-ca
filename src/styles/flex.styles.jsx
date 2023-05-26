@@ -31,3 +31,7 @@ export const alignItemsCenter = `
 export const alignItemsStart = `
   align-items: start;
 `;
+
+export const alignItemsEnd = `
+  align-items: end;
+`;
