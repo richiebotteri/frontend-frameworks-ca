@@ -51,7 +51,9 @@ export default function Search() {
         {filteredProducts.map((product, index) => (
           <styled.SearchResult
             key={index}
-            href={`/ProductPage?title=${product.title}`}
+            href={`/ProductPage/${product.title.replace(/\s+/g, "-")}?id=${
+              product.id
+            }`}
           >
             <p>{product.title}</p>
           </styled.SearchResult>

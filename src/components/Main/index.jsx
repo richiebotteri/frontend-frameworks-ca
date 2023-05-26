@@ -1,9 +1,16 @@
+import { styled } from "styled-components";
 import { MainContainer } from "./styled";
+import * as flex from "../../styles/flex.styles";
+
+const StyledMain = styled.main`
+  ${flex.column};
+  flex: 1;
+`;
 
 export default function Main({ children }) {
   return (
-    <main>
+    <StyledMain>
       <MainContainer>{children}</MainContainer>
-    </main>
+    </StyledMain>
   );
 }

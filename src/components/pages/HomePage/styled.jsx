@@ -4,6 +4,27 @@ import mediaQuery from "../../../styles/breakpoint";
 
 // Containers
 
+export const CardGrid = styled.div`
+  display: grid;
+  margin-top: 40px;
+  ${flex.justifyCenter}
+  grid-template-columns: auto;
+  gap: 30px;
+
+  @media ${mediaQuery.tabletSm} {
+    grid-template-columns: repeat(2, auto);
+    justify-content: none;
+  }
+
+  @media ${mediaQuery.tabletMd} {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media ${mediaQuery.laptopLg} {
+    grid-template-columns: repeat(3, auto);
+  }
+`;
+
 export const LinkContainer = styled.a`
   ${flex.column}
   width: 100%;
@@ -57,9 +78,12 @@ export const RowContainer = styled.div`
 `;
 
 export const PriceContainer = styled.div`
-  ${flex.row}
+  ${flex.row};
+  ${flex.justifyBetween};
+  ${flex.alignItemsEnd};
   flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
 `;
 
 // Image
@@ -83,7 +107,6 @@ export const Title = styled.p`
 `;
 export const Description = styled.p`
   ${resetSpacing};
-  padding-top: 20px;
 `;
 export const PriceText = styled.p`
   ${resetSpacing};
