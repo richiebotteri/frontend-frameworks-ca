@@ -27,7 +27,9 @@ export const Li = styled.li`
 `;
 
 export const A = styled.a`
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: 2px underline;
+    outline: none;
   }
 `;

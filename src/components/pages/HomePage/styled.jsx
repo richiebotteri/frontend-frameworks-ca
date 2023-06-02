@@ -31,8 +31,10 @@ export const LinkContainer = styled.a`
   max-width: 400px;
   height: 400px;
   transition: 0.2s ease-in-out;
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    outline: none;
   }
 
   @media ${mediaQuery.mobilXs} {
@@ -90,6 +92,7 @@ export const PriceContainer = styled.div`
 
 export const Img = styled.img`
   width: inherit; /* Inherits from card container */
+  height: 100%;
   object-fit: cover;
 `;
 
@@ -119,5 +122,9 @@ export const DiscountPrice = styled(PriceText)`
 `;
 
 export const Del = styled.del`
+  display: inline-block;
+  padding-bottom: 3px;
+  font-size: 16px;
+  font-family: "roboto";
   color: #666666;
 `;

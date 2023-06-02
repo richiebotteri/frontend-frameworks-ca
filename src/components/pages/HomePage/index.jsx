@@ -52,9 +52,12 @@ export default function HomePage() {
                       <s.PriceText>Kr {price},-</s.PriceText>
                     ) : (
                       <>
-                        <s.DiscountPrice>
-                          Kr {discountedPrice},-
-                        </s.DiscountPrice>
+                        <div>
+                          <s.Del>Kr {price}</s.Del>
+                          <s.DiscountPrice>
+                            Kr {discountedPrice},-
+                          </s.DiscountPrice>
+                        </div>
                         <DiscountPercentage>
                           {parseInt(((price - discountedPrice) * 100) / price)}%
                         </DiscountPercentage>

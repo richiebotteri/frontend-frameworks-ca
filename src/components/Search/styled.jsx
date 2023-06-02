@@ -20,6 +20,11 @@ export const SearchInput = styled.input`
   padding-left: 20px;
   width: inherit;
   z-index: 5;
+
+  &:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
 `;
 
 export const SearchIcon = styled.div`
@@ -39,7 +44,7 @@ export const SearchResults = styled.div`
   max-height: 150px;
   border-radius: 0 0 10px 10px;
   border: 1px solid lightgray;
-  background-color: lightblue;
+  background-color: lightgray;
   z-index: 4;
   overflow-y: scroll;
 `;
@@ -47,9 +52,9 @@ export const SearchResult = styled.a`
   ${flex.row};
   ${flex.alignItemsCenter};
   height: 45px;
-  background-color: #caf4ff;
+  background-color: #fcfcfc;
   padding-left: 20px;
-  border-bottom: 1px solid lightblue;
+  border-bottom: 1px solid #ebebeb;
   cursor: pointer;
 
   &p {
@@ -57,7 +62,9 @@ export const SearchResult = styled.a`
     margin: 0;
   }
 
-  &:hover {
-    background-color: #f1fdff;
+  &:hover,
+  &:focus {
+    background-color: #ebebeb;
+    outline: none;
   }
 `;

@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { Container } from "../../../shared/Container";
 import * as flex from "../../../styles/flex.styles";
-import { IconButton } from "../../../shared/IconLink/styled";
+import { IconButton, IconLink } from "../../../shared/IconLink/styled";
 import { Description } from "../HomePage/styled";
 import mediaQuery from "../../../styles/breakpoint";
 
@@ -43,11 +43,19 @@ export const StyledImg = styled.img`
   object-fit: cover;
 `;
 
+const sharedStyles = `
+width: 100%;
+padding: 20px;
+border-radius: 40px;
+background-color: #fffaef;
+`;
+
+export const CheckoutLink = styled(IconLink)`
+  ${sharedStyles}
+`;
+
 export const AddToCartButton = styled(IconButton)`
-  width: 100%;
-  padding: 20px;
-  border-radius: 40px;
-  background-color: #fffaef;
+  ${sharedStyles}
 `;
 
 export const PriceContainer = styled.div`

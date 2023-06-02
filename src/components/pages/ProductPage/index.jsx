@@ -1,21 +1,33 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import useApi from "../../../hooks/useApi";
-import { DiscountPrice, PriceText } from "../HomePage/styled";
+import { Del, DiscountPrice, PriceText } from "../HomePage/styled";
 import * as s from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "../../../shared/Spinner";
+import { useContext, useState } from "react";
+import { CartContext } from "../../../context/cartContext";
 
 export default function ProductPage() {
+  // FETCH API DATA
+
   const API_URL = "https://api.noroff.dev/api/v1/online-shop/";
-
   const { data, isLoading } = useApi(API_URL);
-
   const products = data;
 
+  //FILTER API DATA BASED ON PRODUCT ID
   const params = new URL(document.location).searchParams;
   const id = params.get("id");
-
   const selectedProduct = products.filter((product) => product.id === id);
+
+  // ADD PRODUCT TO CART ON CLICK
+  const [active, setActive] = useState(false);
+
+  const { state, dispatch } = useContext(CartContext);
+
+  function onAddToClick(cartItem) {
+    setActive(true);
+    dispatch({ type: "ADD_TO_CART", payload: { cartItem } });
+  }
 
   return (
     <>
@@ -42,7 +54,10 @@ export default function ProductPage() {
                     <PriceText>Kr {price},-</PriceText>
                   ) : (
                     <>
-                      <DiscountPrice>Kr {discountedPrice},-</DiscountPrice>
+                      <div>
+                        <Del>Kr {price}</Del>
+                        <DiscountPrice>Kr {discountedPrice},-</DiscountPrice>
+                      </div>
                       <s.DiscountPercentage>
                         - {parseInt(((price - discountedPrice) * 100) / price)}%
                       </s.DiscountPercentage>
@@ -50,7 +65,29 @@ export default function ProductPage() {
                   )}
                 </s.PriceContainer>
                 <s.ProductDescription>{description}</s.ProductDescription>
-                <s.AddToCartButton>Add to Cart</s.AddToCartButton>
+                {active === true ||
+                state.items.find((item) => item.id === id) ? (
+                  <s.CheckoutLink href="/CartPage">
+                    Go to checkout
+                  </s.CheckoutLink>
+                ) : (
+                  <>
+                    <s.AddToCartButton
+                      onClick={() =>
+                        onAddToClick({
+                          id,
+                          count: 1,
+                          title,
+                          imageUrl,
+                          price,
+                          discountedPrice,
+                        })
+                      }
+                    >
+                      Add to Cart
+                    </s.AddToCartButton>
+                  </>
+                )}
               </s.ContentContainer>
             </s.ProductContainer>
             <s.ReviewParentContainer>
@@ -76,3 +113,5 @@ export default function ProductPage() {
     </>
   );
 }
+
+//

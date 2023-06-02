@@ -15,9 +15,10 @@ export const CartCount = styled.div`
   background-color: black;
   border-radius: 100%;
   color: white;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
-  display: none;
+  font-family: "ubuntu";
+  display: ${(props) => (props.count > 0 ? "flex" : "none")};
   ${flex.justifyCenter};
   ${flex.alignItemsCenter};
 `;

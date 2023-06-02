@@ -12,8 +12,9 @@ const sharedStyled = `
   background-color: white;
   transition: 0.1s ease-in-out;
   cursor: pointer;
-  &:hover {
+  &:hover, &:focus {
     background-color: lightgray;
+    outline: none;
   }
 
   font-size: 18px;

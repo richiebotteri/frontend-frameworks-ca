@@ -14,11 +14,7 @@ export default function Form() {
     const form = event.target;
     const formInputData = new FormData(form);
     const formInputObject = Object.fromEntries(formInputData);
-
     console.log(formInputObject);
-
-    // form.reset();
-    // location.reload();
   }
 
   function onNameChange(event) {
