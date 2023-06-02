@@ -5,15 +5,16 @@ import GlobalStyle from "./styles/GlobalStyle.jsx";
 import Theme from "./styles/theme.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { CartProvider } from "./context/cartContext.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Theme>
       <GlobalStyle />
-        <CartProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </CartProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartProvider>
     </Theme>
   </React.StrictMode>
 );
