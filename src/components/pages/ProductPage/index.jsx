@@ -5,7 +5,7 @@ import * as s from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "../../../shared/Spinner";
 import { useContext, useState } from "react";
-import { CartContext } from "../../../context/cartContext";
+import { CartContext } from "../../../context";
 
 export default function ProductPage() {
   // FETCH API DATA

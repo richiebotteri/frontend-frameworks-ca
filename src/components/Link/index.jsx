@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as i from "@fortawesome/free-solid-svg-icons";
 import * as styled from "./styled";
 import { useContext } from "react";
-import { CartContext } from "../../context/cartContext";
+import { CartContext } from "../../context";
 
 export function CartIconLink() {
   const { state } = useContext(CartContext);

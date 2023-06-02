@@ -7,7 +7,7 @@ import { IconButton } from "../../../shared/IconLink/styled";
 import { Del, DiscountPrice, Img, PriceText } from "../HomePage/styled";
 import { DiscountPercentage } from "../ProductPage/styled";
 import * as s from "./styled";
-import { CartContext } from "../../../context/cartContext";
+import { CartContext } from "../../../context";
 import { useContext, useEffect, useState } from "react";
 
 export default function CartPage() {
