@@ -1,5 +1,5 @@
 import { LogoLink } from "./styled";
 
-export default function Logo({ children }) {
-  return <LogoLink>{children}</LogoLink>;
+export default function Logo({ children, href }) {
+  return <LogoLink href={href}>{children}</LogoLink>;
 }

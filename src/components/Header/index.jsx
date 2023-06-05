@@ -18,7 +18,7 @@ export default function Header({ test }) {
   return (
     <c.Header onChange={test}>
       <c.MobileHeader>
-        <Logo>SwiftShop</Logo>
+        <Logo href={"/"}>SwiftShop</Logo>
         <MenuButton onClick={toggleMenuOnClick}>Bare</MenuButton>
       </c.MobileHeader>
       <c.Menu $isActive={menuToggle}>
