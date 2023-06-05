@@ -37,9 +37,15 @@ export default function CartPage() {
   useEffect(() => {
     const initialValue = 0;
 
-    const totalArray = state.items.map(({ count, price }) => {
-      const itemPrice = count * price;
-      return itemPrice;
+    const totalArray = state.items.map(({ count, price, discountedPrice }) => {
+      let itemPrice;
+      if(price !== discountedPrice){
+         itemPrice = count * discountedPrice;
+         return itemPrice;
+      } else {
+        itemPrice = count * price;
+        return itemPrice;
+      }
     });
 
     const cartPriceSum = totalArray.reduce(
@@ -130,7 +136,7 @@ export default function CartPage() {
             <h2>Total</h2>
             <p>{parseFloat(totalPrice).toFixed(2)},- Kr</p>
           </s.CheckoutPriceCtnr>
-          <s.CheckoutButton>Checkout</s.CheckoutButton>
+          <s.CheckoutButton href="/CheckoutSuccessPage">Checkout</s.CheckoutButton>
         </s.CheckoutContainer>
       </s.CartParentContainer>
     </>

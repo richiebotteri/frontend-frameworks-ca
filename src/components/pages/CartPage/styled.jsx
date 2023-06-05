@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import * as flex from "../../../styles/flex.styles";
 import mediaQuery from "../../../styles/breakpoint";
-import { IconButton } from "../../../shared/IconLink/styled";
+import { IconButton, IconLink } from "../../../shared/IconLink/styled";
 
 export const CartParentContainer = styled.div`
   min-width: fit-content;
@@ -24,7 +24,7 @@ export const CheckoutContainer = styled.div`
   background-color: #fcfcfc;
 `;
 
-export const CheckoutButton = styled(IconButton)`
+export const CheckoutButton = styled(IconLink)`
   width: 100%;
   padding: 20px;
   border-radius: 40px;
