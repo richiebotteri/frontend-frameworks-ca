@@ -9,8 +9,9 @@ export default function CheckoutSuccessPage() {
   
   useEffect(()=>{
     dispatch({type: "CLEAR_CART"});
+    document.title = 'Checkout Success';
   }, [])
-
+  
   return (
     <SuccessCtnr>
       <FontAwesomeIcon icon={faCircleCheck} size="2xl"/>

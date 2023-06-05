@@ -4,6 +4,7 @@ import Spinner from "../../../shared/Spinner";
 import * as s from "./styled";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { DiscountPercentage } from "../ProductPage/styled";
+import { useEffect } from "react";
 
 // s = styled
 
@@ -13,6 +14,10 @@ export default function HomePage() {
   const { data, isLoading } = useApi(API_URL);
 
   const products = data;
+
+  useEffect(() => {
+    document.title = 'Homepage';
+  }, []);
 
   return (
     <>

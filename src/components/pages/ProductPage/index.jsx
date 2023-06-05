@@ -4,7 +4,7 @@ import { Del, DiscountPrice, PriceText } from "../HomePage/styled";
 import * as s from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "../../../shared/Spinner";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../context";
 
 export default function ProductPage() {
@@ -18,6 +18,12 @@ export default function ProductPage() {
   const params = new URL(document.location).searchParams;
   const id = params.get("id");
   const selectedProduct = products.filter((product) => product.id === id);
+
+  useEffect(() => {
+    selectedProduct.map((product) => {
+      document.title = product.title;
+    })
+  }, [selectedProduct]);
 
   // ADD PRODUCT TO CART ON CLICK
   const [active, setActive] = useState(false);

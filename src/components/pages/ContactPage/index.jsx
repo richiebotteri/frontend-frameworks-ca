@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import Form from "../../Form";
 
 export default function ContactPage() {
+  useEffect(() => {
+    document.title = 'Contact Page';
+  }, []);
+
   return (
     <>
       <h1>Contact Page</h1>
