@@ -123,6 +123,6 @@ export const QuantityCounter = styled.div`
   height: 35px;
   ${flex.row}
   ${flex.alignItemsCenter}
-${flex.justifyCenter}
-border: 1px solid lightgray;
+  ${flex.justifyCenter}
+  border: 1px solid lightgray;
 `;

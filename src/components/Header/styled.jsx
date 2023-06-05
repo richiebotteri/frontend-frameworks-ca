@@ -14,6 +14,7 @@ export const Header = styled.header`
   @media ${mediaQuery.tabletMd} {
     ${flex.row};
     ${flex.justifyBetween};
+    padding: ${({ theme: { spacing } }) => spacing.p3} 0;
     gap: ${({ theme: { spacing } }) => spacing.gap3};
   }
 `;

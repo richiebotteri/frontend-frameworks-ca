@@ -6,7 +6,7 @@ export const Form = styled.form`
   gap: 20px;
   max-width: 400px;
   margin-top: 40px;
-  padding: 20px;
+  padding: 40px;
   border: 1px solid #e4e4e4;
   border-radius: 4px;
   background-color: #fafafa;
@@ -22,9 +22,10 @@ export const Label = styled.label`
 `;
 
 export const inputStyles = `
-border: 1px solid #c4c4c4;
-border-radius: 4px;
-padding: 2px 0 2px 10px;
+border-radius: 40px;
+border: 1px solid lightgray;
+height: 45px;
+padding-left: 20px;
 `;
 
 export const Input = styled.input`
@@ -32,6 +33,3 @@ export const Input = styled.input`
   ${inputStyles}
 `;
 
-export const TextArea = styled.textarea`
-  ${inputStyles}
-`;

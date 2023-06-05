@@ -78,19 +78,17 @@ export default function Form() {
         />
       </s.FormGroup>
       <s.FormGroup>
-        <s.Label htmlFor="body">Body</s.Label>
-        <s.TextArea
+        <s.Label htmlFor="body">Message</s.Label>
+        <s.Input
           type="text"
           id="body"
           name="body"
-          placeholder="ex: I was billed for a product i refunded. please help"
-          rows="5"
-          cols="33"
+          placeholder="ex: I need help with refund"
           value={body}
           onChange={onBodyChange}
           minLength={3}
           required
-        ></s.TextArea>
+        ></s.Input>
       </s.FormGroup>
       <s.Input type="submit" value="submit" />
     </s.Form>
